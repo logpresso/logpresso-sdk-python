@@ -5,21 +5,27 @@
 - future
 - pyjnius >= 1.1.2dev0
 
-## 다운로드
+## EGG 다운로드
 
-**반드시 아래의 의존성 문제를 해결할것**
+**설치 전에 반드시 아래의 의존성 문제를 해결할것**
 
 - [logpresso-sdk-python for python 2.7](http://staging.araqne.org/logpresso-1.0.0-py2.7.egg)
 - [logpresso-sdk-python for python 3.6](http://staging.araqne.org/logpresso-1.0.0-py3.6.egg)
+
+```
+easy_install logpresso-1.0.0-py2.7.egg
+OR
+easy_install logpresso-1.0.0-py3.6.egg
+```
 
 
 ## 의존성 빌드 및 설치(pyjnius 최신버전)
 
 2018년 6월 현재 pip 에 등록되어 있는 pyjnius 1.1.1 버전은 outdate 되어 제대로 동작하지 않으나 깃헙에 공개되어 있는 버전은 잘 동작하므로 이를 다운로드 받아 직접 설치할 필요가 있다.
 
-#### Linux
+#### Linux or Mac
 
-직접 빌드하고자 하는 경우 python 헤더(Python.h)가 설치되어 있어야 합니다. `yum install python-devel` 혹은 배포판에 따라 이에 준하는 명령을 이용해 설치.
+직접 빌드하고자 하는 경우 python 헤더(Python.h)가 설치되어 있어야 합니다. `yum install python-devel` 혹은 배포판에 따라 이에 준하는 명령을 이용해 설치. gcc 가 없을 경우 gcc 도 설치해야 합니다.
 
 ```
 git clone https://github.com/stania/pyjnius
