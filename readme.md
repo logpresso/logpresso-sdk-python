@@ -79,6 +79,13 @@ with LogpressoClient('localhost', 8888, 'USER', 'PASSWORD') as client:
         for row in cursor:
             print(row._id, row._table, time.strftime("%Y-%m-%d %H:%M:%S", row._time),
                   dict(row.data()), (row.idle, row.kernel, row.user))
+
+    row = {'col1': 'val1', 'col2': -1, 'col3': [-0.25, 0, 0.25], 'col4': np.arange(3), 'col5': np.random.rand(3)}
+    for i in range(5):
+        row['id'] = i
+        f = client.insert('python_insert', row)
+    # must wait for completion of last insert
+    client.await(1000)
 ```
 
 ### *nix bash

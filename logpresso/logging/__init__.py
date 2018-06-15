@@ -99,8 +99,8 @@ class TcpSender(threading.Thread):
 
     idx_file = None
     log_file = None
-    idx_pos = 0L
-    log_pos = 0L
+    idx_pos = 0
+    log_pos = 0
 
     try:
       idx_file = open(idx_path, 'rb')
@@ -184,8 +184,8 @@ class LogpressoHandler(logging.StreamHandler):
     self.max_count = max_count
     self.max_bytes = max_bytes
     self.level = logging.DEBUG
-    self.total_count = 0L
-    self.total_bytes = 0L
+    self.total_count = 0
+    self.total_bytes = 0
 
     if self.transport == 'tcp':
       if (path is None):
