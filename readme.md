@@ -37,8 +37,8 @@ python setup.py install
 
 이디엄에서 빌드한 윈도우즈용 64비트 pyjnius는 다음 위치에서 다운로드 가능하다.
 
-- [pyjnius for python 2.7, 64bit](http://staging.araqne.org/pyjnius-1.1.2.dev0-py2.7-win-amd64.egg)
-- [pyjnius for python 3.6, 64bit](http://staging.araqne.org/pyjnius-1.1.2.dev0-py3.6-win-amd64.egg)
+- [pyjnius for python 2.7, 64bit](http://staging.araqne.org/pyjnius-1.1.2_stania-py2.7-win-amd64.egg)
+- [pyjnius for python 3.6, 64bit](http://staging.araqne.org/pyjnius-1.1.2_stania-py3.6-win-amd64.egg)
 
 직접 pyjnius 빌드를 시도(`python setup.py bdist_egg`)하면 VC build tools 설치를 요구한다. 다음 위치를 방문하여 설치가 가능하다.
 
