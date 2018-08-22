@@ -3,6 +3,7 @@
 ## 의존성
 
 - future
+- numpy
 - pyjnius >= 1.1.2dev0
 
 ## EGG 다운로드
