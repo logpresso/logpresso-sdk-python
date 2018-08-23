@@ -1,7 +1,7 @@
 import glob, time, os
 import future
 import jnius_config
-jnius_config.add_options('-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9506')
+#jnius_config.add_options('-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9506')
 try:
     jnius_config.add_classpath(glob.glob(os.path.dirname(os.path.realpath(__file__))+'/araqne-logdb-client-*-package.jar')[0])
 except IndexError:
