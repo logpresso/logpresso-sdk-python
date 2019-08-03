@@ -50,7 +50,7 @@ class Logpresso :
                 break
             time.sleep(0.5)     
         print(self.session.recv())
-
+	self._rpc('org.araqne.logdb.msgbus.LogQueryPlugin.removeQuery', dict(id=_queryId))
 
     def listStreamQueries(self) :
         '''
