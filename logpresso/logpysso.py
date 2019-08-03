@@ -44,7 +44,7 @@ class Logpresso :
         while True:
             _status = self._rpc('org.araqne.logdb.msgbus.LogQueryPlugin.queryStatus', dict(id=_queryId))
             if(_status.get('is_end')) : 
-                _param = dict(offset=0, limit=10000, id=_queryId, binary_encode=True)
+                _param = dict(offset=0, limit=10000, id=_queryId, binary_encode=False)
                 _params = self._encode('org.araqne.logdb.msgbus.LogQueryPlugin.getResult', _param)
                 self.session.send(_params) 
                 break
