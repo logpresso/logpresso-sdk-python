@@ -33,7 +33,24 @@ class Logpresso :
         response = self._rpc('org.araqne.logdb.msgbus.ManagementPlugin.login', param)
 
     def query(self, qry) :
-        pass
+        _param = dict(query=qry, context=None, source="python-client")
+        _response = self._rpc('org.araqne.logdb.msgbus.LogQueryPlugin.createQuery', _param)
+        _queryId= _response.get('id')
+        _field_order = _response.get('field_order')
+#        _param = dict(streaming=False, compression='none', id=_queryId)
+        _param = dict(streaming=False, id=_queryId)
+        self._rpc('org.araqne.logdb.msgbus.LogQueryPlugin.startQuery', _param)
+        start = time.time()
+        while True:
+            _status = self._rpc('org.araqne.logdb.msgbus.LogQueryPlugin.queryStatus', dict(id=_queryId))
+            if(_status.get('is_end')) : 
+                _param = dict(offset=0, limit=10000, id=_queryId, binary_encode=True)
+                _params = self._encode('org.araqne.logdb.msgbus.LogQueryPlugin.getResult', _param)
+                self.session.send(_params) 
+                break
+            time.sleep(0.5)     
+        print(self.session.recv())
+
 
     def listStreamQueries(self) :
         '''
