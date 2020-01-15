@@ -45,7 +45,9 @@ python setup.py install
 
 - python 2.7: http://www.microsoft.com/en-us/download/details.aspx?id=44266
 - python 3.6: 
-    - http://landinghub.visualstudio.com/visual-cpp-build-tools 
+    - ~http://landinghub.visualstudio.com/visual-cpp-build-tools~
+    - https://visualstudio.microsoft.com/ko/vs/older-downloads/ 
+      하단의 *재배포 가능 패키지 및 빌드 도구*를 선택하고 *Microsoft Built Tools 2015 업데이트 3*을 선택하여 설치
     - 인스톨러 안에서 VC++ 빌드 도구 선택
     - v14.0 관련 툴을 추가로 우측에서 선택하여 설치 후 bdist_egg 재시도
 
